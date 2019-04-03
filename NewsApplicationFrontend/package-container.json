@@ -1,0 +1,16 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "This application helps you search movies in your database in a watchlist. You have to solve a specific problem here as described in PROBLEM.md. To get yourself familiar with the application, please go through the following steps.",
+   "main": "karma.conf.js",
+   "dependencies": {
+	  "express": "^4.16.3"
+	},
+   "devDependencies": {},
+   "scripts":{
+	 "test": "echo \"Error: no test specified\" && exit 1",
+     "start": "node server.js" 
+	},
+   "author": "",
+   "license": "ISC"
+}

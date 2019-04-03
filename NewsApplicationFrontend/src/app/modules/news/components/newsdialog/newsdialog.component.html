@@ -1,0 +1,16 @@
+<!--<span>Update this news description - By{{data.obj.author}}</span>-->
+<h4>Update this news description</h4>
+<p></p>
+<!--<span mat-dialog-title>{{data.obj.title}}</span>-->
+<span>{{data.obj.title}}</span>
+<div mat-dialog-content>
+ <p>Description</p></div>
+ <div>
+ <mat-form-field item-width="100">
+     <textarea rows="8" matInput [(ngModel)]="description"></textarea>
+ </mat-form-field>   
+</div>
+<div mat-dialog-actions>
+    <button mat-button color=warn (click)="onNoClick()">Cancel</button>
+    <button mat-button color=warn (click)="updateDescription()">Update</button>
+</div>

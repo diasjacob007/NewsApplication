@@ -1,0 +1,30 @@
+<form class="register-form" #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)" [style.fontsize.px]="20">
+    <div class="register-block">
+        <div class="row">
+            <h3>Register User</h3>
+        </div>
+        <div class="row">
+            <mat-form-field class="register-input-full-width">
+                <input id="firstname" matInput placeholder="First Name" [(ngModel)]="newUser.firstname" name="firstname">
+            </mat-form-field>
+            <mat-form-field class="register-input-full-width">
+                <input id="lastname" matInput placeholder="Last Name" [(ngModel)]="newUser.lastname" name="lastname">
+            </mat-form-field>
+            <mat-form-field class="register-input-full-width">
+                <input id="userId" matInput placeholder="User Id" [(ngModel)]="newUser.userId" name="userId" required minlength="5" maxlength="10"
+                #userId="ngModel">
+            </mat-form-field>
+            <mat-form-field class="register-input-full-width">
+                <input type="password" id="password" matInput placeholder="Password" [(ngModel)]="newUser.password" name="password">
+            </mat-form-field>
+            <mat-form-field class="register-input-full-width">                 
+                <input type="radio" id="userRole" value="Admin" ngModel="newUser.userRole" name="userRole"> Administrator
+                <input type="radio" id="userRole" value="RegUser" ngModel="newUser.userRole" name="userRole"> RegisteredUser
+            </mat-form-field>           
+        </div>
+        <div class="row">
+            <button class="register-user" mat-raised-button-color="primary" type="submit" (click)="registerUser(registerForm)">Register</button>
+            <button mat-raised-button-color="primary" (click)="resetInput()">Clear</button>
+        </div>        
+    </div>
+</form>

@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+    <span>News Application</span>
+    <button mat-button *ngIf="isLoggedIn" [routerLink]="['/news/category_wise']">Category Wise News</button>
+    <button id="top-button" *ngIf="isLoggedIn" mat-button [routerLink]="['/news/trending_wise']">Top News</button>
+    <button id="watchlist" *ngIf="isLoggedIn" mat-button [routerLink]="['/news/watchlist']">My FavouriteNewsList</button>
+    <button class="search-button" *ngIf="isLoggedIn" mat-button [routerLink]="['/news/search']">Search</button>
+    <button class="logout-button" *ngIf="isLoggedIn" mat-button (click)="Logout()">Logout</button>    
+</mat-toolbar>
+<router-outlet></router-outlet>

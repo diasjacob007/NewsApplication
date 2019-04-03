@@ -1,0 +1,41 @@
+version: '3'
+services:
+  user-app:
+    image: diasjacob07/newsapp:newsappuserauthservice-image
+    restart: always
+    network_mode: host
+    container_name: userapp-docker
+    ports:
+    - 8089:8089
+    expose:
+    - 8089
+    depends_on:
+    - news-mysql
+  news-app:
+    image: diasjacob07/newsapp:newsappnewsservice-image
+    restart: always
+    network_mode: host
+    container_name: newsapp-docker
+    ports:
+    - 8081:8081
+    expose:
+    - 8081
+    depends_on:
+    - news-mysql
+  news-mysql:
+    image: mysql:5.5
+    network_mode: host
+    container_name: mysql-docker
+    ports:
+    - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: newsdb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+  angular:
+    image: diasjacob07/newsapp:newsappangular-image
+    network_mode: host
+    container_name: angular-docker
+    ports:
+      - 4200:4200 

@@ -1,0 +1,18 @@
+<mat-card class="news-thumbnail">
+    <mat-card-header>
+        <!--<mat-card-title class="newsName">{{news?.source.name}}</mat-card-title>-->
+        <mat-card-subtitle class="newsAuthor">{{news?.author}}</mat-card-subtitle>
+    </mat-card-header>
+    <img class="news-image" mat-card-image [src]='news?.urlToImage' [alt]='news?.title'> 
+    <mat-card-content class="news-overview">
+    <p>        
+        {{news?.title}}
+        {{news?.description}}
+    </p>
+    </mat-card-content>
+    <mat-card-actions class="news-actions">
+        <button *ngIf="!useWatchlistApi" [disabled]="isDisabled" class="addButton" mat-raised-button color="primary" (click)="addToWatchList()">Add To FavouriteNewsList</button> 
+        <button *ngIf="useWatchlistApi && (isDeleteButtobVisible || !isUpdateButtonVisibile)" mat-raised-button color="primary" (click)="deleteFromWatchList()">Delete</button> 
+        <button *ngIf="useWatchlistApi && isDeleteButtobVisible && isUpdateButtonVisibile" mat-raised-button color="primary" (click)="updateFromWatchList('update')" align="end">Update</button> 
+    </mat-card-actions>
+</mat-card>

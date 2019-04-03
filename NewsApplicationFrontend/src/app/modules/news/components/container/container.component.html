@@ -1,0 +1,6 @@
+<div class="news-container">
+    <news-thumbnail *ngFor="let news of newsArray" [news]="news" [useWatchlistApi]="useWatchlistApi"
+    (addNews)="addNewsToWatchList($event)" (deleteNews)="deleteNewsFromWatchList($event)">
+        {{news.title}}
+    </news-thumbnail>
+</div>

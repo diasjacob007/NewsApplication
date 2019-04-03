@@ -1,0 +1,21 @@
+.news-thumbnail{
+    width: 160px;
+    margin: 10px;
+}
+.news-image{
+    height: 120px;
+}
+.news-overview{
+    height: 80px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.news-overview::-webkit-scrollbar{
+    width:2px;
+    background: gray;
+}
+
+.news-actions{
+    text-align: right;
+}
